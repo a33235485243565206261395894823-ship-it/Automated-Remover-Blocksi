@@ -1,6 +1,18 @@
 # Automated-Remover-Blocksi
 
 ## Overview
+
+### Purpose
+- This utility is designed for users who intent on needing to remove a file or file folder many times using brute-force methods.
+- This utility will watch for the specified file(s) and remove them upon their appearance **instantly**.
+
+  ### Flow
+  - User runs the `.bat`
+  - The `.bat` launches the `.ps1`
+  - The `.ps1` actively searches for, and deletes the specified file(s)
+  - The `.ps1` quits when user closes or presses `Ctrl+C`
+
+### Components
 This utility consists of three components that work together:
 
 1. **`Delete_Blocksi.bat`**  
@@ -138,7 +150,8 @@ Each entry follows:
 ### Execution Requirements
 - Windows 10 or 11
 - PowerShell 5.1 or PowerShell 7+
-- Administrator privileges are not required if specified file(s) are on the current user's. These files must also be saved to the current user's.
+- Administrator privileges are **not** required if specified file(s) are on the current user's. These files must also be saved to the current user's.
+- Internet connection **not** required
 
 ### Configuration Required
 The following placeholders **must be replaced**:
@@ -151,9 +164,24 @@ and
 powershell -ExecutionPolicy Bypass -NoExit -File "[PATH]"
 ```
 
+## Risks
+- The system will touch any file paths specified
+- It could accidentally delete wanted/needed files if specified by user
+- Use at your own risk
+  
 ## Running the Tool
 - Un-ZIP the file
 - These files shall be kept in the same folder when used
+- Use Notepad
+  1. Ctrl+R
+  2. Notepad.exe
+  3. Press enter
+  4. Ctrl+O
+  5. Navigate to directory containing file(s)
+  6. Click on file or Shift+Click to select multiple files
+  7. Press enter
+  8. Edit files
+- The file will run if the PowerShell window appears 
 
 ### Step 1 — Configure Paths
 Edit `Delete_Blocksi.ps1` and set real filesystem paths for:
@@ -172,9 +200,23 @@ The path shall be the file path for the `Delete_Blocksi.ps1` file. Users could a
 
 ### Step 3 — Observe Logs
 The console will show timestamps and logs.  
+To view, open the log in Notepad using the instructions provided above, or double-click.
 Detailed logs accumulate in:
 ```
 script.log
 ```
+
+## Proper Folder Structure
+...
+|
+Delete-Blocksi-Windows11
+│
+├── README.md
+├── Delete_Blocksi.ps1
+├── Delete_Blocksi.bat
+└── script.log (created automatically)
+      
+## Version History
+1.0.0 Official Build | Stable Release
 
 # End
