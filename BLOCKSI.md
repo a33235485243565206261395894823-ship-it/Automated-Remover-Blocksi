@@ -34,6 +34,8 @@ Edit `Delete_Blocksi.ps1` and set real filesystem paths for:
 Edit `Delete_Blocksi.bat` and set real filesystem paths for:
 - `Delete_Blocksi.ps1`
 
+If the user wishes they may use the shortcut provided, it is a link to the `.bat` and can be displayed on the desktop or be pinned to the taskbar. Users could use the `ico` file provided as the icon for this file or create their own.
+
 ### Step 2 — Run the Script
 Open PowerShell and run:
 ```powershell
